@@ -3,6 +3,7 @@ package com.example.kunal.justjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void submitOrder(View v){
         TextView kj=(TextView)findViewById(R.id.quantity_textx_View);
+
 
         displayPrice(Integer.parseInt(kj.getText().toString()));
     }
@@ -32,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayPrice(int k){
+        String crm="";
 
         TextView kj=(TextView)findViewById(R.id.price_textx_View);
-        kj.setText(NumberFormat.getCurrencyInstance().format(k));
+
+        CheckBox cbox=(CheckBox)findViewById(R.id.checkBox);
+        if(cbox.isChecked()){
+            crm="Whipped Cream added";
+        }
+        kj.setText(NumberFormat.getCurrencyInstance().format(k)+"\n"+crm);
     }
 }
