@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayPrice(int k){
         String crm="";
 
-        TextView kj=(TextView)findViewById(R.id.price_textx_View);
+//        TextView kj=(TextView)findViewById(R.id.price_textx_View);
 
         CheckBox cbox=(CheckBox)findViewById(R.id.checkBox);
         if(cbox.isChecked()){
